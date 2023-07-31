@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public class Main {
-    static java.awt.GraphicsEnvironment env = java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment();
-    static java.awt.DisplayMode displayMode = env.getDefaultScreenDevice().getDisplayMode();
+    static GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    static DisplayMode displayMode = env.getDefaultScreenDevice().getDisplayMode();
     public static int width = displayMode.getWidth();
     public static int height = displayMode.getHeight();
     public static void main(String[] args) {
@@ -87,6 +87,7 @@ public class Main {
             Button sendButton = new Button("send");
             sendButton.addActionListener(e -> {
                 String data = sendForm.getText()+'\n';
+                sendForm.setText("");
                 try {
                     out.write(data.getBytes());
                 } catch (IOException ex) {
