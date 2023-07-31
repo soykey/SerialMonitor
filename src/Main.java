@@ -75,7 +75,11 @@ public class Main {
                     }
                 }
                 @Override
-                public void keyReleased(KeyEvent e) {}
+                public void keyReleased(KeyEvent e) {
+                    if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                        sendForm.setText("");
+                    }
+                }
             });
             gbc.gridx=0;
             gbc.gridy=1;
