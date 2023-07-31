@@ -1,4 +1,5 @@
 # Simple Serial Monitor
+<img src="image/ScreenShot.png" style="display: block; margin-left: auto; margin-right: auto;" alt="Screenshot">
 
 ## Overview
 This program is a simple serial monitor written in Java.
