@@ -5,9 +5,13 @@ import com.fazecast.jSerialComm.SerialPortEvent;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Objects;
 
 public class Main {
     static GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -23,7 +27,11 @@ public class Main {
             JFrame f = new JFrame("SerialMonitor");
             f.setBounds(width/3, height/3,650, 342);
             f.setResizable(false);
-            f.setIconImage(new ImageIcon("./src/logo.png").getImage());
+
+            ClassLoader cl = Main.class.getClassLoader();
+            ImageIcon myIcon = new ImageIcon(Objects.requireNonNull(cl.getResource("logo.png")));
+            f.setIconImage(myIcon.getImage());
+
             JPanel panel = new JPanel();
             GridBagLayout layout = new GridBagLayout();
             panel.setLayout(layout);
