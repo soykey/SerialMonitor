@@ -23,6 +23,7 @@ public class Main {
             JFrame f = new JFrame("SerialMonitor");
             f.setBounds(width/3, height/3,650, 342);
             f.setResizable(false);
+            f.setIconImage(new ImageIcon("C:\\Users\\soppy\\IdeaProjects\\SerialMonitor\\src\\logo.png").getImage());
             JPanel panel = new JPanel();
             GridBagLayout layout = new GridBagLayout();
             panel.setLayout(layout);
